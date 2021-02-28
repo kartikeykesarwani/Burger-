@@ -10,7 +10,7 @@ const controls = [
   { label: 'Meat', type: 'meat' },
 ];
 
-const buildControls = (props) => (
+const BuildControls = (props) => (
   <div className={classes.BuildControls}>
     <p>
       Current Price: <strong>{props.price.toFixed(2)}</strong>
@@ -28,9 +28,9 @@ const buildControls = (props) => (
       className={classes.OrderButton}
       disabled={!props.purchasable}
       onClick={props.ordered}>
-      ORDER NOW
+      {props.isAuth ? 'ORDER NOW' : 'SIGN UP TO ORDER'}
     </button>
   </div>
 );
 
-export default buildControls;
+export default BuildControls;
